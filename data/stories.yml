@@ -3,7 +3,13 @@ version: "3.1"
 stories:
   - story: happy path
     steps:
-          - intent: greet
-          - action: utter_greet
-          - intent: goodbye
-          - action: utter_goodbye
+      - intent: greet
+      - action: utter_greet
+      - intent: goodbye
+      - action: utter_goodbye
+  - story: Finding path to the chosen station
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: path_to_chosen_station
+      - action: utter_route

@@ -3,12 +3,35 @@ version: "3.1"
 intents:
   - greet
   - goodbye
+  - nearby_stations
+  - path_to_nearest_station
+  - path_to_chosen_station
+
+entities:
+  - station_company_name
+
+slots:
+  station_company_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: station_company_name
+
+forms:
+  station_form:
+    required_slots:
+      - station_company_name
 
 responses:
   utter_greet:
   - text: "Приветствую, что вас интересует?"
   utter_goodbye:
   - text: "Приятных поездок!"
+  utter_route:
+  - text: "Вот ваш маршрут: {route_info}"
+
+actions:
+  - action_create_route
 
 session_config:
   session_expiration_time: 60
