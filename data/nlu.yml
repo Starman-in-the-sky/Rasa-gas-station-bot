@@ -31,6 +31,6 @@ nlu:
     -Как доехать до ближайшей заправки?
 - intent: path_to_chosen_station
   examples: |
-    -Путь до [имя_заправки](station_company_name)
-    -Построй маршрут до [имя_заправки](station_company_name)
-    -Как доехать до [имя_заправки](station_company_name)?
+    -Путь до [Москва](station_company_name)
+    -Построй маршрут до [Владивосток](station_company_name)
+    -Как доехать до [Париж](station_company_name)?

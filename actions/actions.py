@@ -1,6 +1,8 @@
 import requests
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
+
 
 class ActionCreateRoute(Action):
 
@@ -13,7 +15,7 @@ class ActionCreateRoute(Action):
 
         # Отправка запроса к API Yandex Maps для получения маршрута
         response = requests.get(
-            f"https://api-maps.yandex.ru/2.1/?apikey=5941ca0f-88a5-462a-b68b-049e98bd248c&lang=ru_RU&mode=routes&from={from_place}&to={to_place}")
+            f"https://api-maps.yandex.ru/2.1/?apikey=6e08bccf-7da4-46e3-9623-a5ddfd850be6&lang=ru_RU&mode=routes&from={from_place}&to={to_place}")
         route = response.json()['response']['route'][0]['steps']
 
         # Отправка ответа пользователю
@@ -22,4 +24,4 @@ class ActionCreateRoute(Action):
             route_info += step['instruction'] + "\n"
         dispatcher.utter_message(template="utter_route", text=f"Маршрут от Химок до {to_place}:\n{route_info}")
 
-        return route_info
+        return [SlotSet("route_info", route_info)]

@@ -4,4 +4,5 @@ rules:
   - rule: getting the route
     steps:
       - intent: path_to_chosen_station
+      - action: action_create_route
       - action: utter_route

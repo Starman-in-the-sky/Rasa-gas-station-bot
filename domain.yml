@@ -16,6 +16,10 @@ slots:
     mappings:
       - type: from_entity
         entity: station_company_name
+  route_info:
+    type: text
+    mappings:
+      - type: custom
 
 forms:
   station_form:

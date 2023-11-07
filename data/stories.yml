@@ -12,4 +12,5 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: path_to_chosen_station
+      - action: action_create_route
       - action: utter_route
