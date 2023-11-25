@@ -9,6 +9,26 @@ nlu:
     - Бонжур
     - Хай
     - Йо
+- intent: nearby_stations
+  examples: |
+    - Покажи ближайшие заправки
+    - Найди ближайшие заправки
+    - Какие тут ближайшие заправки?
+    - Где ближайшие заправки?
+    - Мне нужны ближайшие заправки
+- intent: path_to_nearest_station
+  examples: |
+    - Путь до ближайшей заправки
+    - Построй маршрут до ближайшей заправки
+    - Как доехать до ближайшей заправки?
+- intent: path_to_chosen_station
+  examples: |
+    - Путь до [Лукойла](station_company_name)
+    - Построй маршрут до [Роснефти](station_company_name)
+    - Как доехать до [TATNEFT](station_company_name)
+    - Построй путь до [Эверона](station_company_name)
+    - Маршрут до [Газпромнефти](station_company_name)
+    - Нужно доехать до [Shell](station_company_name)
 - intent: goodbye
   examples: |
     - Конец
@@ -17,20 +37,3 @@ nlu:
     - Спасибо
     - Пока
     - Всё
-- intent: nearby_stations
-  examples: |
-    -Покажи ближайшие заправки
-    -Найди ближайшие заправки
-    -Какие тут ближайшие заправки?
-    -Где ближайшие заправки?
-    -Мне нужны ближайшие заправки
-- intent: path_to_nearest_station
-  examples: |
-    -Путь до ближайшей заправки
-    -Построй маршрут до ближайшей заправки
-    -Как доехать до ближайшей заправки?
-- intent: path_to_chosen_station
-  examples: |
-    -Путь до [Москва](station_company_name)
-    -Построй маршрут до [Владивосток](station_company_name)
-    -Как доехать до [Париж](station_company_name)?

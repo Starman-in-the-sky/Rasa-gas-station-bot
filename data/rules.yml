@@ -1,8 +1,19 @@
 version: "3.1"
 
 rules:
+  - rule: greeting
+    steps:
+      - intent: greet
+      - action: happy_greeting
+
   - rule: getting the route
     steps:
       - intent: path_to_chosen_station
-      - action: action_create_route
-      - action: utter_route
+      - action: create_route
+
+  - rule: ending the conversation
+    condition:
+      - active_loop: null
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
