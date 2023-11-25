@@ -5,13 +5,19 @@ rules:
     steps:
       - intent: greet
       - action: happy_greeting
-
+  - rule: getting user address
+    steps:
+      - intent: get_address
+      - action: parse_address
   - rule: getting the route
     steps:
       - intent: path_to_chosen_station
       - action: create_route
 
-
+  - rule: getting prices
+    steps:
+      - intent: get_prices
+      - action: check_prices
 
 #  - rule: getting nearest stations
 #    steps:

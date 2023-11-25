@@ -8,11 +8,13 @@ intents:
   - path_to_chosen_station
   - get_address
   - get_nearest_stations
+  - get_prices
 
 actions:
   - create_route
   - happy_greeting
   - parse_address
+  - check_prices
 
 entities:
   - station_company_name

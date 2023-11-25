@@ -1,3 +1,4 @@
+import json
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -44,6 +45,35 @@ class ActionParseUserAddress(Action):
             SlotSet("user_coordinates", "55.838369,37.483113")
 
             dispatcher.utter_message(text=f"Благодарю! Теперь вы можете посмотреть адреса ближайших заправок, проложить маршрут, узнать цены на бензин и т.д. Что бы вы хотели сделать?")
+        except Exception as inst:
+            dispatcher.utter_message(text=f"Произошла ошибка при работе бота  Тип исключения: {type(inst)}  Аргументы исключения: {inst.args}  Исключение: {inst}")
+            print(f"Тип исключения: {type(inst)}")
+            print(f"Аргументы исключения: {inst.args}")
+            print(f"Исключение: {inst}")
+
+        return []
+
+
+class ActionGetPrices(Action):
+    def name(self) -> Text:
+        return "check_prices"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            path = 'E:\Rasa-bot\Rasa-gas-station-bot\output.json'
+            with open(path, 'r', encoding='utf-8') as file:
+                data = json.load(file)
+
+            price_92 = data[0]["price_92"]
+            price_95 = data[0]["price_95"]
+            price_spbt = data[0]["price_spbt"]
+            price_dt = data[0]["price_dt"]
+
+            dispatcher.utter_message(text=f"Цена на Аи-92:{price_92}, цена на Аи-95:{price_95}, цена на Газ-СПБТ:{price_spbt}, цена на ДТ:{price_dt}")
+
         except Exception as inst:
             dispatcher.utter_message(text=f"Произошла ошибка при работе бота  Тип исключения: {type(inst)}  Аргументы исключения: {inst.args}  Исключение: {inst}")
             print(f"Тип исключения: {type(inst)}")
