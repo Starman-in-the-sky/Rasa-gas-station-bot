@@ -15,6 +15,7 @@ actions:
   - happy_greeting
   - parse_address
   - check_prices
+  - check_nearest_stations
 
 entities:
   - station_company_name

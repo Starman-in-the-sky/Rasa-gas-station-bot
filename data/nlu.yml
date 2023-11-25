@@ -23,16 +23,17 @@ nlu:
     - Как доехать до ближайшей заправки?
 - intent: path_to_chosen_station
   examples: |
-    - Путь до [Лукойла](station_company_name)
-    - Построй маршрут до [Роснефти](station_company_name)
-    - Как доехать до [TATNEFT](station_company_name)
-    - Построй путь до [Эверона](station_company_name)
-    - Маршрут до [Газпромнефти](station_company_name)
-    - Нужно доехать до [Shell](station_company_name)
+    - Путь до [Ленинградский просп., 45А, стр. 1, Москва](station_company_name)
+    - Построй маршрут до [ул. Барклая, 26, Москва](station_company_name)
+    - Как доехать до [ул. Коровий Вал, 9Б, Москва](station_company_name)
+    - Построй путь до [Красногвардейский бул., 1А, стр. 1, Москва](station_company_name)
+    - Маршрут до [Комсомольский просп., 50, Москва](station_company_name)
+    - Нужно доехать до [Преображенская ул., вл3, Москва](station_company_name)
 - intent: get_address
   examples: |
-    - Мой адрес: [](user_address)
-    - Вот мой адрес: [](user_address)
+    - Мой адрес: [улица Ильинка, 21, Москва, 103132](user_address)
+    - Вот мой адрес: [Павелецкая площадь, 2с1, Москва, 115054](user_address)
+    - Адрес: [улица Серпуховский Вал, 6, Москва](user_address)
 - intent: get_nearest_stations
   examples: |
     - Мне нужны ближайшие заправки

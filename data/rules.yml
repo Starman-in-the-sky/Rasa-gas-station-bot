@@ -19,10 +19,10 @@ rules:
       - intent: get_prices
       - action: check_prices
 
-#  - rule: getting nearest stations
-#    steps:
-#      - intent: get_nearest_stations
-#      - action:
+  - rule: getting nearest stations
+    steps:
+      - intent: get_nearest_stations
+      - action: check_nearest_stations
 
   - rule: ending the conversation
     condition:

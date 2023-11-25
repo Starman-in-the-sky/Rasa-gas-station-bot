@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-station_company_name",
+      "2": "I-station_company_name",
+      "3": "L-station_company_name",
+      "4": "U-station_company_name",
+      "5": "B-user_address",
+      "6": "I-user_address",
+      "7": "L-user_address",
+      "8": "U-user_address",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-station_company_name": 1,
+      "I-station_company_name": 2,
+      "L-station_company_name": 3,
+      "U-station_company_name": 4,
+      "B-user_address": 5,
+      "I-user_address": 6,
+      "L-user_address": 7,
+      "U-user_address": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]
