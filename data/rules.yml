@@ -16,10 +16,10 @@ rules:
       - intent: get_address
       - action: parse_address
 
-  - rule: getting nearest stations
-    steps:
-      - intent: get_nearest_stations
-      - action:
+#  - rule: getting nearest stations
+#    steps:
+#      - intent: get_nearest_stations
+#      - action:
 
   - rule: ending the conversation
     condition:

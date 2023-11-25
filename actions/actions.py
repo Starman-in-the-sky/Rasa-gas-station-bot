@@ -1,7 +1,10 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 from func.json_processing import making_json
+from decimal import Decimal
+
 
 class ActionGreeting(Action):
     def name(self) -> Text:
@@ -35,6 +38,11 @@ class ActionParseUserAddress(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         try:
             uaddress = tracker.get_slot("user_address")
+            # client = Client("6e08bccf-7da4-46e3-9623-a5ddfd850be6")
+            # coordinates = client.coordinates(uaddress)
+
+            SlotSet("user_coordinates", coordinates)
+
             dispatcher.utter_message(text=f"Благодарю! Теперь вы можете посмотреть адреса ближайших заправок, проложить маршрут, узнать цены на бензин и т.д. Что бы вы хотели сделать?")
         except Exception as inst:
             dispatcher.utter_message(text=f"Произошла ошибка при работе бота  Тип исключения: {type(inst)}  Аргументы исключения: {inst.args}  Исключение: {inst}")
@@ -43,6 +51,7 @@ class ActionParseUserAddress(Action):
             print(f"Исключение: {inst}")
 
         return []
+
 
 class ActionCreateRoute(Action):
 

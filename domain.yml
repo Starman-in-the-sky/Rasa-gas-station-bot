@@ -31,6 +31,12 @@ slots:
     mappings:
       - type: from_entity
         entity: user_address
+  user_coordinates:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    mappings:
+      - type: custom
+        action: parse_address
 
 
 responses:
