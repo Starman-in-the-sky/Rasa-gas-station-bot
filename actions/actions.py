@@ -15,8 +15,8 @@ class ActionGreeting(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         try:
-
-            making_json()
+            SlotSet("user_coordinates", [float(55.838369), float(37.483113)])
+            # making_json()
             dispatcher.utter_message(text=f"Приветствую, для начала работы пожалуйста введите свой адрес в формате: «Мой адрес: ваш адрес» ")
 
         except Exception as inst:
@@ -41,7 +41,7 @@ class ActionParseUserAddress(Action):
             # client = Client("6e08bccf-7da4-46e3-9623-a5ddfd850be6")
             # coordinates = client.coordinates(uaddress)
 
-            SlotSet("user_coordinates", coordinates)
+            SlotSet("user_coordinates", "55.838369,37.483113")
 
             dispatcher.utter_message(text=f"Благодарю! Теперь вы можете посмотреть адреса ближайших заправок, проложить маршрут, узнать цены на бензин и т.д. Что бы вы хотели сделать?")
         except Exception as inst:
@@ -63,7 +63,7 @@ class ActionCreateRoute(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         try:
-            from_place = "Химки, Московская область"
+            from_place = tracker.get_slot("user_coordinates")
             to_place = tracker.get_slot("station_company_name")
 
             # Создаем URL для маршрута на Яндекс Картах
