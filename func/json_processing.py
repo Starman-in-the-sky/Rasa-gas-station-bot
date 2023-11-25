@@ -1,8 +1,8 @@
 import json
 import requests
-
+from yandex_geocoder import Client
 def making_json():
-    path = 'E:\Rasa-bot\Rasa-gas-station-bot\webscrapping\gasscrapping\gasscrapping\spiders\gasPrices.json'
+    path = 'C:\\Users\\alast\PycharmProjects\\Rasa-gas-station-bot\\webscrapping\\gasscrapping\\gasscrapping\\spiders\\gasPrices.json'
     with open(path, 'r', encoding='utf-8') as input_file:
         data = json.load(input_file)
 
@@ -14,6 +14,7 @@ def making_json():
 
     with open('output.json', 'w', encoding='utf-8') as output_file:
         json.dump(new_data, output_file, indent=4, ensure_ascii=False)
+
 
     input_file.close()
     output_file.close()
