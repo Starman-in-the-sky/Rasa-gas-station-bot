@@ -6,13 +6,17 @@ intents:
   - nearby_stations
   - path_to_nearest_station
   - path_to_chosen_station
+  - get_address
+  - get_nearest_stations
 
 actions:
   - create_route
   - happy_greeting
+  - parse_address
 
 entities:
   - station_company_name
+  - user_address
 
 slots:
   station_company_name:
@@ -21,6 +25,13 @@ slots:
     mappings:
       - type: from_entity
         entity: station_company_name
+  user_address:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    mappings:
+      - type: from_entity
+        entity: user_address
+
 
 responses:
   utter_greet:

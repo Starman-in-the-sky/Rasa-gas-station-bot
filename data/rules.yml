@@ -11,6 +11,16 @@ rules:
       - intent: path_to_chosen_station
       - action: create_route
 
+  - rule: getting user address
+    steps:
+      - intent: get_address
+      - action: parse_address
+
+  - rule: getting nearest stations
+    steps:
+      - intent: get_nearest_stations
+      - action:
+
   - rule: ending the conversation
     condition:
       - active_loop: null

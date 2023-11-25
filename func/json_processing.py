@@ -1,5 +1,6 @@
 import json
 import requests
+
 def making_json():
     path = 'E:\Rasa-bot\Rasa-gas-station-bot\webscrapping\gasscrapping\gasscrapping\spiders\gasPrices.json'
     with open(path, 'r', encoding='utf-8') as input_file:

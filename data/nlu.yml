@@ -29,6 +29,16 @@ nlu:
     - Построй путь до [Эверона](station_company_name)
     - Маршрут до [Газпромнефти](station_company_name)
     - Нужно доехать до [Shell](station_company_name)
+- intent: get_address
+  examples: |
+    - Мой адрес: [](user_address)
+    - Вот мой адрес: [](user_address)
+- intent: get_nearest_stations
+  examples: |
+    - Мне нужны ближайшие заправки
+    - Ближайшие заправки
+    - Выведи заправки поблизости
+    - Нужны заправки поблизости
 - intent: goodbye
   examples: |
     - Конец

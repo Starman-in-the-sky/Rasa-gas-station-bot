@@ -23,6 +23,27 @@ class ActionGreeting(Action):
             print(f"Исключение: {inst}")
 
         return []
+
+
+class ActionParseUserAddress(Action):
+    def name(self) -> Text:
+        return "parse_address"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            uaddress = tracker.get_slot("user_address")
+            dispatcher.utter_message(text=f"Благодарю! Теперь вы можете посмотреть адреса ближайших заправок, проложить маршрут, узнать цены на бензин и т.д. Что бы вы хотели сделать?")
+        except Exception as inst:
+            dispatcher.utter_message(text=f"Произошла ошибка при работе бота  Тип исключения: {type(inst)}  Аргументы исключения: {inst.args}  Исключение: {inst}")
+            print(f"Тип исключения: {type(inst)}")
+            print(f"Аргументы исключения: {inst.args}")
+            print(f"Исключение: {inst}")
+
+        return []
+
 class ActionCreateRoute(Action):
 
     def name(self) -> Text:
